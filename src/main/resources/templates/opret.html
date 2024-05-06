@@ -6,39 +6,36 @@
     <link rel="stylesheet" href="../static/css/opret.css" th:href="@{css/opret.css}">
 </head>
 <body>
-<header>
-    <section class="header">
-        <div class="logo">
-            <a th:href="@{https://bilabonnement.dk/}" class="logo">
-                <img th:src="@{https://bilabonnementer.dk/wp-content/uploads/2023/06/bilabonnement.dk_-1.png}" width="35%" height="35%" alt="headerlogo"/>
-            </a>
-        </div>
-        <h1>Bilabonnement</h1>
-    </section>
-</header>
+<section class="header">
+    <div class="logo">
+        <a th:href="@{https://bilabonnement.dk/}" class="logo">
+            <img src="../static/img/bil.png" th:src="@{img/bil.png}" width="30%" height="30%">
+        </a>
+    </div>
+
+</section>
+<a th:href="" class="back-to-home">Gå tilbage til forside</a>
 
 <div class="form-container" th:object="${user}">
-    <form id="opret-form" action="/submit-your-opret-path" method="POST">
-        <a th:href="" class="back-to-home">Gå tilbage til forside</a>
 
-        <h2>Opret medarbejder</h2>
-        <label for="username">Brugernavn:</label>
-        <input type="text" id="username" name="username" th:field="${user.username}" required>
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" th:field="${user.email}" required>
+    <h2>Opret ny medarbejder</h2>
+    <label for="username"><strong>Brugernavn:</strong></label>
+    <input type="text" id="username" name="username" th:field="${user.username}" required>
 
-        <label for="password">Adgangskode:</label>
-        <input type="password" id="password" name="password" th:field="${user.password}" required>
+    <label for="email"><strong>E-mail:</strong></label>
+    <input type="email" id="email" name="email" th:field="${user.email}" required>
 
-        <label for="confirm-password">Bekræft Adgangskode:</label>
-        <input type="password" id="confirm-password" name="confirm-password" th:field="${user.confirmPassword}" required>
+    <label for="password"><strong>Adgangskode:</strong></label>
+    <input type="password" id="password" name="password" th:field="${user.password}" required>
 
-        <button type="submit">Opret ny medarbejder</button>
-    </form>
+    <label for="confirm-password"><strong>Bekræft Adgangskode:</strong></label>
+    <input type="password" id="confirm-password" name="confirm-password" th:field="${user.confirmPassword}" required>
+
+    <button type="submit">Opret ny medarbejder</button>
 </div>
 
-</body>
+
 
 <footer>
     <section class="footer">
@@ -47,5 +44,6 @@
     </section>
 
 </footer>
+</body>
 </html>
 

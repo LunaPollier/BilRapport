@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bilabonnement</title>
+    <link rel="stylesheet" href="../static/css/opret.css" th:href="@{css/opret.css}">
+</head>
+<body>
+<header>
+    <section class="header">
+        <div class="logo">
+            <a th:href="@{https://bilabonnement.dk/}" class="logo">
+                <img th:src="@{https://bilabonnementer.dk/wp-content/uploads/2023/06/bilabonnement.dk_-1.png}" width="35%" height="35%" alt="headerlogo"/>
+            </a>
+        </div>
+        <h1>Bilabonnement</h1>
+    </section>
+</header>
+
+<div class="form-container" th:object="${user}">
+    <form id="opret-form" action="/submit-your-opret-path" method="POST">
+        <a th:href="" class="back-to-home">Gå tilbage til forside</a>
+
+        <h2>Opret medarbejder</h2>
+        <label for="username">Brugernavn:</label>
+        <input type="text" id="username" name="username" th:field="${user.username}" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" th:field="${user.email}" required>
+
+        <label for="password">Adgangskode:</label>
+        <input type="password" id="password" name="password" th:field="${user.password}" required>
+
+        <label for="confirm-password">Bekræft Adgangskode:</label>
+        <input type="password" id="confirm-password" name="confirm-password" th:field="${user.confirmPassword}" required>
+
+        <button type="submit">Opret ny medarbejder</button>
+    </form>
+</div>
+
+</body>
+
+<footer>
+    <section class="footer">
+        <p><strong> Bilabonnement A/S </strong></p>
+        <p> Vibeholmsvej 31 2605 Brøndby CVR-nr. 37856827</p>
+    </section>
+
+</footer>
+</html>
+

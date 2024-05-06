@@ -1,0 +1,55 @@
+/*Styling for layout*/
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#dashboard{
+    background-color: aliceblue;
+    padding: 20px;
+}
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+h1{
+    text-align: center;
+}
+.summary{
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+.summary p{
+    margin: 0;
+}
+.chart{
+    text-align: center;
+    margin-bottom: 40px;
+}
+/*Styling for navigation*/
+nav{
+    background-color:navy;
+    color: #ffffff;
+    padding: 10px 0;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+nav ul li{
+    display: inline;
+    margin-right: 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+/*Styling for status area*/
+#status{
+    background-color: #ddd;
+    padding: 20px;
+    text-align: center;
+}

@@ -1,19 +1,17 @@
 package Controller;
 
 import Klasser.Skade;
-import Repository.SkadeRepository;
-import org,springframework.web.bind.annotation.PathVariable
-
+import Repository.SkadeRepositoryy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 
 @RestController
 @RequestMapping("/skade")
 public class SkadeController {
-    private SkadeRepository skadeRepository;
+    private final SkadeRepositoryy skadeRepository;
 
-    public SkadeController(SkadeRepository skadeRepository) {
+    @Autowired
+    public SkadeController(SkadeRepositoryy skadeRepository) {
         this.skadeRepository = skadeRepository;
     }
 
@@ -23,10 +21,10 @@ public class SkadeController {
         return "Skade registreret med succes.";
     }
 
-    @GetMapping("/{skadeId}")
-    public Skade hentSkade(@PathVariable Long skadeId) {
-        return skadeRepository.findById(skadeId)
-                .orElseThrow(() -> new SkadeNotFoundException(skadeId));
+    @GetMapping("/{bilId}")
+    public Skade hentSkade(@PathVariable Long bilId) {
+        return skadeRepository.findById(bilId)
+                .orElseThrow();
     }
 }
 

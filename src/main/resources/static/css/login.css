@@ -2,17 +2,16 @@ h1{
     text-align: center;
 }
 
-.back-to-home {
-    display: block;
-    margin: 20px 0;
-    padding: 10px 20px;
+footer {
+    bottom: 0;
+    width: 100%;
     background-color: navy;
     color: white;
     text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    position: fixed;
+    left: 0;
 }
+
 
 .form-container {
     text-align: center;
@@ -26,13 +25,16 @@ h1{
 .form-container button {
     margin-bottom: 15px;
 }
-
-footer {
-    bottom: 0;
-    width: 100%;
+.back-to-home {
+    display: block;
+    margin: 20px 0;
+    padding: 10px 20px;
     background-color: navy;
     color: white;
     text-align: center;
-    position: fixed;
-    left: 0;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+

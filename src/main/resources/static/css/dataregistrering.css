@@ -1,7 +1,6 @@
 h1{
     text-align: center;
 }
-
 .back-to-home {
     display: block;
     margin: 20px 0;
@@ -14,6 +13,17 @@ h1{
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+footer {
+    bottom: 0;
+    width: 100%;
+    background-color: navy;
+    color: white;
+    text-align: center;
+    position: fixed;
+    left: 0;
+}
+
+
 .form-container {
     text-align: center;
     display: flex;
@@ -25,14 +35,4 @@ h1{
 .form-container input,
 .form-container button {
     margin-bottom: 15px;
-}
-
-footer {
-    bottom: 0;
-    width: 100%;
-    background-color: navy;
-    color: white;
-    text-align: center;
-    position: fixed;
-    left: 0;
 }

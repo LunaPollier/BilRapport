@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Bilabonnement</title>
-    <link rel="stylesheet" href="../static/css/login.css" th:href="@{css/login.css}">
-
+    <link rel="stylesheet" href="../static/css/dataregistrering.css" th:href="@{css/dataregistrering.css}">
 </head>
 <body>
 <section class="header">
@@ -15,24 +14,12 @@
         </a>
 
     </div>
-    <form id="login-form" action="/submit-your-login-path" method="POST">
+    <form id="dataregistrering-form" action="/submit-your-dataregistrering-path" method="POST">
         <a href="forside.html" class="back-to-home">Gå tilbage til forside</a>
     </form>
-
-    <h1> Medarbejder Login </h1>
 </section>
-<div class="form-container" th:object="${user}">
+<h1> Data registrering</h1>
 
-
-    <h2>Login</h2>
-    <label for="username"><strong>Brugernavn:</strong></label>
-    <input type="text" id="username" name="username" th:field="${user.username}" required>
-
-    <label for="password"><strong>Adgangskode:</strong></label>
-    <input type="password" id="password" name="password" th:field="${user.password}" required>
-
-    <button type="submit">Login</button>
-</div>
 <footer>
     <section class="footer">
         <p><strong> Bilabonnement A/S </strong></p>

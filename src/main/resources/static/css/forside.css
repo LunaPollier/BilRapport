@@ -53,3 +53,12 @@ nav ul li a {
     padding: 20px;
     text-align: center;
 }
+footer {
+    bottom: 0;
+    width: 100%;
+    background-color: navy;
+    color: white;
+    text-align: center;
+    position: fixed;
+    left: 0;
+}

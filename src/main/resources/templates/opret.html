@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Bilabonnement</title>
@@ -7,19 +7,18 @@
 </head>
 <body>
 <section class="header">
+
     <div class="logo">
         <a th:href="@{https://bilabonnement.dk/}" class="logo">
-            <img src="../static/img/bil.png" th:src="@{img/bil.png}" width="30%" height="30%">
+            <img src="../static/img/bil.png" th:src="@{img/bil.png}" width="30%" height="30%" alt="logo1">
         </a>
     </div>
 
 </section>
-
-
+<div class="form-container">
+    <form id="opret-form" action="/submit-your-opret-path" method="POST">
+        <a href="forside.html" class="back-to-home">Gå tilbage til forside</a>
 <div class="form-container" th:object="${user}">
-<form id="opret-form" action="/submit-your-opret-path" method="POST">
-    <a href="forside.html" class="back-to-home"> Gå tilbage til forside</a>
-    <div class="form-container" th:object="${user}">
 
 
     <h2>Opret ny medarbejder</h2>
@@ -37,6 +36,8 @@
 
     <button type="submit">Opret ny medarbejder</button>
 </div>
+    </form>
+
 
 
 

@@ -12,8 +12,11 @@
             <img src="../static/img/bil.png" th:src="@{img/bil.png}" width="30%" height="30%" alt="logo1">
         </a>
     </div>
-
-    <a href="forside.html" class="back-to-home">Gå tilbage til forside</a>
+    <div class="form-container">
+        <form id="opret-form" action="/submit-your-opret-path" method="POST">
+            <a href="forside.html" class="back-to-home">Gå tilbage til forside</a>
+        </form>
+    </div>
 </section>
 <h1>Data registrering</h1>
 <form id="dataregistrering-form" action="/opret-lejeaftale" method="POST">

@@ -7,25 +7,27 @@
 </head>
 <body>
 <section class="header">
-
     <div class="logo">
         <a th:href="@{https://bilabonnement.dk/}" class="logo">
             <img src="../static/img/bil.png" th:src="@{img/bil.png}" width="30%" height="30%" alt="logo1">
         </a>
-
     </div>
-    <form id="dataregistrering-form" action="/submit-your-dataregistrering-path" method="POST">
-        <a href="forside.html" class="back-to-home">Gå tilbage til forside</a>
-    </form>
-</section>
-<h1> Data registrering</h1>
 
+    <a href="forside.html" class="back-to-home">Gå tilbage til forside</a>
+</section>
+<h1>Data registrering</h1>
+<form id="dataregistrering-form" action="/opret-lejeaftale" method="POST">
+<input type="text" id="kundeNavn" name="kundeNavn" placeholder="Kunde navn" required>
+<input type="text" id="bilModel" name="bilModel" placeholder="Bil model" required>
+<input type="text" id="lejeStartDato" name="lejeStartDato" placeholder="Leje start dato" required>
+<input type="text" id="lejeSlutDato" name="lejeSlutDato" placeholder="Leje slut dato" required>
+<button type="submit">Opret lejeaftale</button>
+</form>
 <footer>
     <section class="footer">
         <p><strong> Bilabonnement A/S </strong></p>
         <p> Vibeholmsvej 31 2605 Brøndby CVR-nr. 37856827</p>
     </section>
-
 </footer>
 </body>
 </html>

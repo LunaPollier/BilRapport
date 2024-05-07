@@ -1,3 +1,4 @@
+package Klasser;
 
 public class Lejeaftale {
     private String kundeNavn;

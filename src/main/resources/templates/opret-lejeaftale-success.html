@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <link rel="stylesheet" href="../static/css/opret-lejeaftale-success.css" th:href="@{css/oprettetsucced.css}">
+</head>
+<body>
+<section class="header">
+    <div class="logo">
+        <a th:href="@{https://bilabonnement.dk/}" class="logo">
+            <img src="../static/img/bil.png" th:src="@{img/bil.png}" width="30%" height="30%" alt="logo1">
+        </a>
+    </div>
+    <div class="form-container">
+        <form id="opret-form" action="/submit-your-opret-path" method="POST">
+            <a href="forside.html" class="back-to-home">Gå tilbage til forside</a>
+        </form>
+    </div>
+</section>
+<h1>Lejeaftale oprettet</h1>
+
+<h2><strong>Lejeaftalen er nu oprettet med succes!</strong></h2>
+<!-- Her kan du tilføje yderligere information, som f.eks. en bekræftelsesbesked, en knap til at oprette en ny lejeaftale osv. -->
+
+<footer>
+    <section class="footer">
+        <p><strong> Bilabonnement A/S </strong></p>
+        <p> Vibeholmsvej 31 2605 Brøndby CVR-nr. 37856827</p>
+    </section>
+</footer>
+</body>
+</html>

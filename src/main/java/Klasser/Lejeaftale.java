@@ -6,6 +6,14 @@ public class Lejeaftale {
     private String lejeStartDato;
     private String lejeSlutDato;
 
+    // Konstruktør
+    public Lejeaftale() {
+        this.kundeNavn = kundeNavn;
+        this.bilModel = bilModel;
+        this.lejeStartDato = lejeStartDato;
+        this.lejeSlutDato = lejeSlutDato;
+    }
+
     // Getters og setters
     public String getKundeNavn() {
         return kundeNavn;

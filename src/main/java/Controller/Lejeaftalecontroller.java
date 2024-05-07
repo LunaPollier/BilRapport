@@ -14,12 +14,21 @@ public class Lejeaftalecontroller {
         return "opret-lejeaftale"; // Returnerer navnet på HTML-filen, der indeholder formularen
     }
 
-    // POST-mapping for at modtage og gemme den nye lejeaftale
     @PostMapping("/opret")
-    public String opretLejeaftale(@ModelAttribute model.Lejeaftale lejeaftale) {
+    public String opretLejeaftale(@ModelAttribute Lejeaftale lejeaftale, Model model) {
         // Gem lejeaftalen i databasen eller udfør anden relevant logik
-        return "redirect:/lejeaftaler/opret-success"; // Redirect til en bekræftelsesside
+        // Her kan du indsætte din kode til at gemme lejeaftalen i databasen
+        // f.eks. ved hjælp af en serviceklasse eller et repository
+
+        // Eksempel: lejeaftaleService.gemLejeaftale(lejeaftale);
+
+        // Tilføj lejeaftalen til modellen, hvis du vil vise den på bekræftelsessiden
+        model.addAttribute("lejeaftale", lejeaftale);
+
+        // Returner navnet på HTML-filen til bekræftelsessiden
+        return "opret-lejeaftale-success";
     }
+
 
     // GET-mapping for at vise en bekræftelsesside efter vellykket oprettelse af lejeaftalen
     @GetMapping("/opret-success")

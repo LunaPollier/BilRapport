@@ -6,8 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 public class Medarbejder {
-    // Medarbejder.java
-
 
     @Entity
     public class MedarbejderLogin {
@@ -19,7 +17,7 @@ public class Medarbejder {
         private String email;
         private String adgangskode;
 
-        // Getter og setter metoder
+        // Getter og setter
 
         public Long getId() {
             return id;

@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/skade")
-public class SkadeController {
+public class Skadecontroller {
     private final SkadeRepositoryy skadeRepository;
 
     @Autowired
-    public SkadeController(SkadeRepositoryy skadeRepository) {
+    public Skadecontroller(SkadeRepositoryy skadeRepository) {
         this.skadeRepository = skadeRepository;
     }
 

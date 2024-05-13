@@ -5,10 +5,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-public class Medarbejder {
+
 
     @Entity
-    public class MedarbejderLogin {
+    public class Medarbejder {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
@@ -51,5 +51,3 @@ public class Medarbejder {
             this.adgangskode = adgangskode;
         }
     }
-
-}

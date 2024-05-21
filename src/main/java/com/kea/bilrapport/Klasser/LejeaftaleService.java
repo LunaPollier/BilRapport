@@ -1,9 +1,12 @@
-package Klasser;
-import Repository.LejeaftaleRepository;
+package com.kea.bilrapport.Klasser;
+/*
+import com.kea.bilrapport.Repository.LejeaftaleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+ */
+/*
 @Service
 public class LejeaftaleService {
 
@@ -14,8 +17,7 @@ public class LejeaftaleService {
         this.lejeaftaleRepository = lejeaftaleRepository;
     }
 
-    @Transactional
-    public void gemLejeaftale(Lejeaftale lejeaftale) {
-        lejeaftaleRepository.save(lejeaftale);
-    }
+
 }
+
+ */

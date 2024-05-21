@@ -1,4 +1,4 @@
-package Klasser;
+package com.kea.bilrapport.Klasser;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

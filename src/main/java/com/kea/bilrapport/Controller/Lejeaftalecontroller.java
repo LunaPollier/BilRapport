@@ -1,12 +1,15 @@
-package Controller;
-import Klasser.Lejeaftale;
-import Klasser.LejeaftaleService;
+package com.kea.bilrapport.Controller;
+/*
+import com.kea.bilrapport.Klasser.Lejeaftale;
+import com.kea.bilrapport.Klasser.LejeaftaleService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
+ */
 
+/*
     @Controller
     @RequestMapping("/lejeaftaler")
     public class Lejeaftalecontroller {
@@ -24,11 +27,8 @@ import org.springframework.beans.factory.annotation.Autowired;
             return "dataregistrering";
         }
 
-        @PostMapping("/opret")
-        public String opretLejeaftale(@ModelAttribute Lejeaftale lejeaftale, Model model) {
-            lejeaftaleService.gemLejeaftale(lejeaftale); // Gem lejeaftalen ved hjælp af serviceklassen
-            model.addAttribute("lejeaftale", lejeaftale);
-            return "opret-lejeaftale-success"; // Retur stien uden ".html"
-        }
+
     }
 
+
+ */

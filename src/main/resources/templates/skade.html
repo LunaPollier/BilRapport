@@ -1,35 +1,66 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
-<title>Registrering af skade </title>
-<link rel="stylesheet" href="../static/css/skade.css" th:href="@{css/skade.css}">
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrering af skade</title>
+    <link rel="stylesheet" href="../static/css/skade.css" th:href="@{css/skade.css}">
+</head>
+<body>
 <section class="header">
-
     <div class="logo">
         <a th:href="@{https://bilabonnement.dk/}" class="logo">
             <img src="../static/img/bil.png" th:src="@{img/bil.png}" width="30%" height="30%" alt="logo1">
         </a>
     </div>
 </section>
-    <div class="form-container">
-        <form id="skade-form" action="/submit-your-skade-path" method="POST">
-            <a href="forside.html" class="back-to-home">Gå tilbage til forside</a>
-            <div class="form-container" th:object="${user}">
-
-                <h2>Registrer Skade</h2>
-                <form action="/skade" method="post">
-                    <label for="stelnummer"> Stelnummer:  </label><br>
-                    <input type="text" id="stelnummer" name="stelnummer">
-                    <label for="bilId">Bil model :</label><br>
-                    <input type="text" id="bilId" name="bilId"><br>
-                    <label for="Beskrivelse">Skade Beskrivelse:</label><br>
-                    <input type="text" id="beskrivelse" name="beskrivelse"><br>
-                    <label for="pris">Pris:</label><br>
-                    <input type="text" id="pris" name="pris"><br><br>
-                    <input type="submit" value="Bekræft">
-                </form>
-            </div>
-                </body>
+<div class="form-container">
+    <a href="forside.html" class="back-to-home">Gå tilbage til forside</a>
+    <div class="form-container" th:object="${user}">
+        <h2>Registrer Skade</h2>
+        <form id="skade-form">
+            <label for="stelnummer">Stelnummer:</label><br>
+            <input type="text" id="stelnummer" name="stelnummer" required><br>
+            <label for="bilId">Bil model:</label><br>
+            <input type="text" id="bilId" name="bilId" required><br>
+            <label for="beskrivelse">Skade Beskrivelse:</label><br>
+            <input type="text" id="beskrivelse" name="beskrivelse" required><br>
+            <label for="pris">Pris:</label><br>
+            <input type="text" id="pris" name="pris" required><br><br>
+            <button type="submit">Bekræft</button>
         </form>
     </div>
+</div>
+
+<script>
+    document.getElementById('skade-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Forhindre standard form indsendelse
+
+        const formData = {
+            stelNummer: document.getElementById('stelnummer').value,
+            bilId: document.getElementById('bilId').value,
+            beskrivelse: document.getElementById('beskrivelse').value,
+            pris: parseFloat(document.getElementById('pris').value)
+        };
+
+        fetch('http://localhost:8080/skade/opret-skade', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert('Skade registreret succesfuldt!');
+                } else {
+                    return response.text().then(text => { throw new Error(text); });
+                }
+            })
+            .catch(error => {
+                console.error('Der opstod en fejl:', error);
+                alert('Der opstod en fejl: ' + error.message);
+            });
+    });
+</script>
+</body>
 </html>

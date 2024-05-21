@@ -1,7 +1,7 @@
-package Controller;
+package com.kea.bilrapport.Controller;
 
-import Klasser.Medarbejder;
-import Repository.MedarbejderRepository;
+import com.kea.bilrapport.Klasser.Medarbejder;
+import com.kea.bilrapport.Repository.MedarbejderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

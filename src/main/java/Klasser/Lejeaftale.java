@@ -45,5 +45,5 @@ public class Lejeaftale {
 
     public void setLejeSlutDato(String lejeSlutDato) {
         this.lejeSlutDato = lejeSlutDato;
-    }
+    }x
 }

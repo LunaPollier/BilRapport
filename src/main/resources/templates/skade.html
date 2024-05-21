@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <title>Registrering af skade </title>
-    <link rel="stylesheet" href="../static/css/skade.css" th:href="@{css/skade.css}">
+<meta charset="UTF-8">
+<title>Registrering af skade </title>
+<link rel="stylesheet" href="../static/css/skade.css" th:href="@{css/skade.css}">
 
-    <section class="header">
+<section class="header">
 
-        <div class="logo">
-            <a th:href="@{https://bilabonnement.dk/}" class="logo">
-                <img src="../static/img/bil.png" th:src="@{img/bil.png}" width="30%" height="30%" alt="logo1">
-            </a>
-        </div>
-
-    </section>
+    <div class="logo">
+        <a th:href="@{https://bilabonnement.dk/}" class="logo">
+            <img src="../static/img/bil.png" th:src="@{img/bil.png}" width="30%" height="30%" alt="logo1">
+        </a>
+    </div>
+</section>
     <div class="form-container">
         <form id="skade-form" action="/submit-your-skade-path" method="POST">
             <a href="forside.html" class="back-to-home">Gå tilbage til forside</a>
@@ -22,7 +20,7 @@
                 <form action="/skade" method="post">
                     <label for="stelnummer"> Stelnummer:  </label><br>
                     <input type="text" id="stelnummer" name="stelnummer">
-                    <label for="bilId">Mærke :</label><br>
+                    <label for="bilId">Bil model :</label><br>
                     <input type="text" id="bilId" name="bilId"><br>
                     <label for="Beskrivelse">Skade Beskrivelse:</label><br>
                     <input type="text" id="beskrivelse" name="beskrivelse"><br>
@@ -32,9 +30,6 @@
                 </form>
             </div>
                 </body>
-
-
-                <body>
-
-                </body>
-            </html>
+        </form>
+    </div>
+</html>

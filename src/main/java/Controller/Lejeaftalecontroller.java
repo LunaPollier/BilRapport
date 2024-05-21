@@ -21,7 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
         @GetMapping("/opret")
         public String visOpretLejeaftaleForm(Model model) {
             model.addAttribute("lejeaftale", new Lejeaftale());
-            return "opret-lejeaftale";
+            return "dataregistrering";
         }
 
         @PostMapping("/opret")

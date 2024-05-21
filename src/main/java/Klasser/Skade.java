@@ -6,6 +6,8 @@ public class Skade {
         private String beskrivelse;
         private double pris;
 
+        private long stelnummer;
+
         public Skade(long skadeId, long bilId, String beskrivelse, double pris) {
             this.skadeId = skadeId;
             this.bilId = bilId;

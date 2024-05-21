@@ -20,12 +20,16 @@
 </section>
 <h1>Data registrering</h1>
 <form id="dataregistrering-form" action="/opret-lejeaftale" method="POST">
-<input type="text" id="kundeNavn" name="kundeNavn" placeholder="Kunde navn" required>
+<input type="text" id="fornavn" name="fornavn" placeholder="Fornavn" required>
+    <input type="text" id="efternavn" name="efternavn" placeholder="Efternavn" required>
+    <input type="text" id="stelnummer" name="stelnummer" placeholder="Stelnummer">
 <input type="text" id="bilModel" name="bilModel" placeholder="Bil model" required>
 <input type="text" id="lejeStartDato" name="lejeStartDato" placeholder="Leje start dato" required>
 <input type="text" id="lejeSlutDato" name="lejeSlutDato" placeholder="Leje slut dato" required>
-<button type="submit">Opret lejeaftale</button>
+    <form id="skade-form" action="/submit-your-skade-path" method="POST">
+        <a href="opret-lejeaftale-success.html" class="back-to-home">Opret leje aftale</a>
 </form>
+
 <footer>
     <section class="footer">
         <p><strong> Bilabonnement A/S </strong></p>

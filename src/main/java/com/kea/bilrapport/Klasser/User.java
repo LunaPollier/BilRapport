@@ -1,4 +1,4 @@
-package Klasser;
+package com.kea.bilrapport.Klasser;
 
 public class User {
     private String username;

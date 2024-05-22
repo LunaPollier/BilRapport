@@ -1,4 +1,4 @@
-package Klasser;
+package com.kea.bilrapport.Klasser;
 
 public class Lejeaftale {
     private String fornavn;

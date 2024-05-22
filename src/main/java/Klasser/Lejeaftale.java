@@ -3,7 +3,7 @@ package Klasser;
 public class Lejeaftale {
     private String fornavn;
     private String efternavn;
-    private String stelnummer
+    private String stelnummer;
     private String bilModel;
     private String lejeStartDato;
     private String lejeSlutDato;
@@ -28,7 +28,7 @@ public class Lejeaftale {
         this.fornavn = fornavn;
     }
 
-    public String getEfternavn() {return efternavn}
+    public String getEfternavn() {return efternavn;}
 
     public void setEfternavn(String efternavn) {this.efternavn = efternavn;}
 

@@ -15,11 +15,12 @@ public class DataRegistrering {
 
     private String navn;
     private String efternavn;
-    private int bilModel;
+    private String bilModel;
 
     private String bilMærke;
     private Date LejeStartDato;
     private Date LejeSlugDato;
+
 
     public String getNavn() {
         return navn;
@@ -45,12 +46,12 @@ public class DataRegistrering {
         this.stelNummer = stelNummer;
     }
 
-    public int getBilModel() {
+    public String getBilModel() {
         return bilModel;
     }
 
     public void setBilModel(int bilModel) {
-        this.bilModel = bilModel;
+        this.bilModel = String.valueOf(bilModel);
     }
 
     public Date getLejeStartDato() {

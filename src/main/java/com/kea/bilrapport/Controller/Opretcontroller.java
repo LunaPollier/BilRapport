@@ -24,5 +24,14 @@ public class Opretcontroller {
 
         return "opret-success";
     }
+
+        @PostMapping("/submit-your-opret-path")
+        public String submitForm(/* Your form parameters */) {
+            // Logic to process form submission
+            // Redirect to success page
+            return "redirect:/opret-lejeaftale-success";
+        }
+    }
+
 }
 

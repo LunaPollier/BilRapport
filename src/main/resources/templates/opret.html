@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <title>Bilabonnement</title>
@@ -7,7 +7,6 @@
 </head>
 <body>
 <section class="header">
-
     <div class="logo">
         <a th:href="@{https://bilabonnement.dk/}" class="logo">
             <img src="../static/img/bil.png" th:src="@{img/bil.png}" width="30%" height="30%" alt="logo1">
@@ -18,41 +17,36 @@
             <li><a href="http://localhost:63342/BilRapport/src/main/resources/templates/forside.html?_ijt=6igr4gou576d7f5r11cpl5ripp">Forside</a></li>
         </ul>
     </div>
-
 </section>
 <div class="form-container">
     <form id="opret-form" action="/submit-your-opret-path" method="POST">
         <a href="forside.html" class="back-to-home">Gå tilbage til forside</a>
-<div class="form-container" th:object="${user}">
 
+        <h2>Opret ny medarbejder</h2>
+        <label for="username"><strong>Brugernavn:</strong></label>
+        <input type="text" id="username" name="username" th:field="${user.username}" required>
 
-    <h2>Opret ny medarbejder</h2>
-    <label for="username"><strong>Brugernavn:</strong></label>
-    <input type="text" id="username" name="username" th:field="${user.username}" required>
+        <label for="email"><strong>E-mail:</strong></label>
+        <input type="email" id="email" name="email" th:field="${user.email}" required>
 
-    <label for="email"><strong>E-mail:</strong></label>
-    <input type="email" id="email" name="email" th:field="${user.email}" required>
+        <label for="password"><strong>Adgangskode:</strong></label>
+        <input type="password" id="password" name="password" th:field="${user.password}" required>
 
-    <label for="password"><strong>Adgangskode:</strong></label>
-    <input type="password" id="password" name="password" th:field="${user.password}" required>
+        <label for="confirm-password"><strong>Bekræft Adgangskode:</strong></label>
+        <input type="password" id="confirm-password" name="confirm-password" th:field="${user.confirmPassword}" required>
 
-    <label for="confirm-password"><strong>Bekræft Adgangskode:</strong></label>
-    <input type="password" id="confirm-password" name="confirm-password" th:field="${user.confirmPassword}" required>
-
-    <button type="submit">Opret ny medarbejder</button>
-</div>
+        <div class="form-container">
+            <form id="succes-form" action="/submit-your-opret-path" method="POST">
+                <a href="opret-lejeaftale-success.html" class="succes">Opret bruger</a>
+        </div>
     </form>
-
-
-
+</div>
 
 <footer>
     <section class="footer">
         <p><strong> Bilabonnement A/S </strong></p>
         <p> Vibeholmsvej 31 2605 Brøndby CVR-nr. 37856827</p>
     </section>
-
 </footer>
 </body>
 </html>
-

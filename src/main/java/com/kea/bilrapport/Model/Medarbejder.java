@@ -15,7 +15,7 @@ import jakarta.persistence.Id;
 
         private String brugernavn;
         private String email;
-        private String adgangskode;
+        private String Password;
 
         // Getter og setter
 
@@ -43,11 +43,14 @@ import jakarta.persistence.Id;
             this.email = email;
         }
 
-        public String getAdgangskode() {
-            return adgangskode;
+        public String getPassword() {
+            return getPassword();
         }
 
-        public void setAdgangskode(String adgangskode) {
-            this.adgangskode = adgangskode;
+        public void setPassword(String password) {
+            this.Password = password;
         }
+
+
+
     }

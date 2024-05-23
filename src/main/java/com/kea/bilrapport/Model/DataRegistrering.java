@@ -1,4 +1,4 @@
-package com.kea.bilrapport.Klasser;
+package com.kea.bilrapport.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

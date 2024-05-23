@@ -1,5 +1,5 @@
 package com.kea.bilrapport.Repository;
-import com.kea.bilrapport.Klasser.Medarbejder;
+import com.kea.bilrapport.Model.Medarbejder;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

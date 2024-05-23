@@ -1,4 +1,4 @@
-package com.kea.bilrapport.Klasser;
+package com.kea.bilrapport.Model;
 /*
 import com.kea.bilrapport.Repository.LejeaftaleRepository;
 import org.springframework.beans.factory.annotation.Autowired;

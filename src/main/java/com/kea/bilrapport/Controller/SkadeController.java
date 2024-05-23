@@ -1,6 +1,6 @@
 package com.kea.bilrapport.Controller;
 
-import com.kea.bilrapport.Klasser.Skade;
+import com.kea.bilrapport.Model.Skade;
 import com.kea.bilrapport.Repository.SkadeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

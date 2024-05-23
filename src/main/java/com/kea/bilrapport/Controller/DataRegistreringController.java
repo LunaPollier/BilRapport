@@ -1,6 +1,6 @@
 package com.kea.bilrapport.Controller;
 
-import com.kea.bilrapport.Klasser.DataRegistrering;
+import com.kea.bilrapport.Model.DataRegistrering;
 import com.kea.bilrapport.Repository.DataRegistreringRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/dataregistrering")
-@CrossOrigin(origins = "http://localhost:63342") // Tillader anmodninger fra din frontend URL
+@CrossOrigin(origins = "http://localhost:63342") // Tillader anmodninger fra frontend URL
 public class DataRegistreringController {
 
     private final DataRegistreringRepository dataRegistreringRepository;

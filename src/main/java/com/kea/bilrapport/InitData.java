@@ -1,7 +1,7 @@
 package com.kea.bilrapport;
 
-import com.kea.bilrapport.Klasser.DataRegistrering;
-import com.kea.bilrapport.Klasser.Skade;
+import com.kea.bilrapport.Model.DataRegistrering;
+import com.kea.bilrapport.Model.Skade;
 import com.kea.bilrapport.Repository.DataRegistreringRepository;
 import com.kea.bilrapport.Repository.SkadeRepository;
 import org.springframework.beans.factory.annotation.Autowired;

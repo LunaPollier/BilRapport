@@ -11,7 +11,7 @@ public class LoginController {
 
     @GetMapping("/login")
     public String showLoginForm() {
-        return "login"; // Returnerer navnet på din HTML-fil for login-siden
+        return "login"; // Returnerer navnet på HTML-fil for login-siden
     }
 
     @PostMapping("/submit-your-login-path")
@@ -19,8 +19,6 @@ public class LoginController {
                                   @RequestParam("password") String password,
                                   Model model) {
 
-        // Her kan du implementere logikken til at validere brugerens loginoplysninger
-        // Du kan også tilføje logik til at tjekke brugernavn og adgangskode mod en database
 
         if (isValidLogin(username, password)) {
             // Hvis login er vellykket, kan du f.eks. viderestille brugeren til en velkomstsiden

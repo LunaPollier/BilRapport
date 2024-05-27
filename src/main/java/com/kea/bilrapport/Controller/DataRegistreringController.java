@@ -3,11 +3,13 @@ package com.kea.bilrapport.Controller;
 import com.kea.bilrapport.Model.DataRegistrering;
 import com.kea.bilrapport.Repository.DataRegistreringRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/dataregistrering")
 @CrossOrigin(origins = "http://localhost:63342") // Tillader anmodninger fra frontend URL
 public class DataRegistreringController {
@@ -19,24 +21,37 @@ public class DataRegistreringController {
         this.dataRegistreringRepository = dataRegistreringRepository;
     }
 
-    @GetMapping
-    public List<DataRegistrering> hentAlleDataRegistreringer() {
-        return dataRegistreringRepository.findAll();
+
+    @GetMapping("/dataregistrering")
+    public String getDataRegistreringPage() {
+        return "dataregistrering";
     }
 
+    @GetMapping()
+    public String hentAlleDataRegistreringer(Model model) {
+        List<DataRegistrering> registreringer = dataRegistreringRepository.findAll();
+        model.addAttribute("antalDataRegistreringer", registreringer.size()); // Opdateret attributnavn
+        return "forside";
+    }
+
+
     @GetMapping("/{stelNummer}")
-    public DataRegistrering hentDataRegistreringEfterStelNummer(@PathVariable String stelNummer) {
-        return dataRegistreringRepository.findById(stelNummer)
+    public String hentDataRegistreringEfterStelNummer(@PathVariable String stelNummer, Model model) {
+        DataRegistrering dataRegistrering = dataRegistreringRepository.findById(stelNummer)
                 .orElseThrow(() -> new RuntimeException("DataRegistrering ikke fundet med stelnummer: " + stelNummer));
+        model.addAttribute("dataRegistrering", dataRegistrering);
+        return "dataregistrering-detaljer"; // Return a view name for the details page
     }
 
     @PostMapping("/opret-lejeaftale")
-    public DataRegistrering opretLejeAftale(@RequestBody DataRegistrering dataRegistrering) {
-        return dataRegistreringRepository.save(dataRegistrering);
+    public String opretLejeAftale(@ModelAttribute DataRegistrering dataRegistrering) {
+        dataRegistreringRepository.save(dataRegistrering);
+        return "redirect:/dataregistrering"; // Redirect to the list view after saving
     }
 
     @DeleteMapping("/{stelNummer}")
-    public void sletDataRegistrering(@PathVariable String stelNummer) {
+    public String sletDataRegistrering(@PathVariable String stelNummer) {
         dataRegistreringRepository.deleteById(stelNummer);
+        return "redirect:/dataregistrering"; // Redirect to the list view after deleting
     }
 }

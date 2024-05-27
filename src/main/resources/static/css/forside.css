@@ -4,6 +4,10 @@ body{
     margin: 0;
     padding: 0;
 }
+body nav image{
+    width: 100vw;
+    height: auto;
+}
 #dashboard{
     background-color: aliceblue;
     padding: 20px;

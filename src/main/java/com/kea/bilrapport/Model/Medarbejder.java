@@ -52,5 +52,6 @@ import jakarta.persistence.Id;
         }
 
 
-
+        public void setUsername(String username) {
+        }
     }

@@ -22,7 +22,6 @@ public class InitData implements CommandLineRunner {
         this.skadeRepository = skadeRepository;
     }
 
-
     @Override
     public void run(String... args) throws Exception {
         // Opret dummy data for leasing
@@ -45,5 +44,8 @@ public class InitData implements CommandLineRunner {
         skadeData.setPris(1500.00);
 
         skadeRepository.save(skadeData);
+
+        // Lav et link til http://localhost:8080/forside
+        System.out.println("Link til forsiden: http://localhost:8080/forside");
     }
 }

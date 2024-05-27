@@ -3,6 +3,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/*
 public class Opretcontroller {
     @GetMapping("/opret")
     public String showopretForm() {
@@ -25,13 +26,16 @@ public class Opretcontroller {
         return "opret-success";
     }
 
+ */
+/*
+
         @PostMapping("/submit-your-opret-path")
-        public String submitForm(/* Your form parameters */) {
-            // Logic to process form submission
-            // Redirect to success page
+        public String submitForm() {
             return "redirect:/opret-lejeaftale-success";
         }
     }
 
-}
 
+
+
+ */

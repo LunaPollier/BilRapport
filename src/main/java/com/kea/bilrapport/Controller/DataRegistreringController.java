@@ -3,6 +3,7 @@ package com.kea.bilrapport.Controller;
 import com.kea.bilrapport.Model.DataRegistrering;
 import com.kea.bilrapport.Repository.DataRegistreringRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/dataregistrering")
-@CrossOrigin(origins = "http://localhost:63342") // Tillader anmodninger fra frontend URL
+@CrossOrigin(origins = "http://localhost:8080")
 public class DataRegistreringController {
 
     private final DataRegistreringRepository dataRegistreringRepository;
@@ -21,19 +22,17 @@ public class DataRegistreringController {
         this.dataRegistreringRepository = dataRegistreringRepository;
     }
 
-
-    @GetMapping("/dataregistrering")
-    public String getDataRegistreringPage() {
-        return "dataregistrering";
+    @GetMapping
+    public String greeting(Model model) {
+        return "dataregistrering"; // Thymeleaf template name (index.html)
     }
 
-    @GetMapping()
-    public String hentAlleDataRegistreringer(Model model) {
-        List<DataRegistrering> registreringer = dataRegistreringRepository.findAll();
-        model.addAttribute("antalDataRegistreringer", registreringer.size()); // Opdateret attributnavn
-        return "forside";
+    @GetMapping("/data")
+    @ResponseBody
+    public ResponseEntity<List<DataRegistrering>> getDataRegistrering() {
+        List<DataRegistrering> data = dataRegistreringRepository.findAll();
+        return ResponseEntity.ok().body(data);
     }
-
 
     @GetMapping("/{stelNummer}")
     public String hentDataRegistreringEfterStelNummer(@PathVariable String stelNummer, Model model) {
@@ -46,12 +45,13 @@ public class DataRegistreringController {
     @PostMapping("/opret-lejeaftale")
     public String opretLejeAftale(@ModelAttribute DataRegistrering dataRegistrering) {
         dataRegistreringRepository.save(dataRegistrering);
-        return "redirect:/dataregistrering"; // Redirect to the list view after saving
+        return "redirect:/dataregistrering";
     }
+
 
     @DeleteMapping("/{stelNummer}")
     public String sletDataRegistrering(@PathVariable String stelNummer) {
         dataRegistreringRepository.deleteById(stelNummer);
-        return "redirect:/dataregistrering"; // Redirect to the list view after deleting
+        return "redirect:/dataregistrering";
     }
 }

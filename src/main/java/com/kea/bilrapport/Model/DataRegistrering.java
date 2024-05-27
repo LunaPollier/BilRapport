@@ -1,26 +1,30 @@
 package com.kea.bilrapport.Model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
 
 import java.util.Date;
 
 @Entity
-@Table(name = "data_registrering")
 public class DataRegistrering {
-    @Id
-    private Long stelNummer;
 
-    private String navn;
-    private String efternavn;
-    private String bilModel;
+    public Long getId() {
+        return id;
+    }
 
-    private String bilMærke;
-    private Date LejeStartDato;
-    private Date LejeSlugDato;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public Long getStelNummer() {
+        return stelNummer;
+    }
+
+    public void setStelNummer(Long stelNummer) {
+        this.stelNummer = stelNummer;
+    }
 
     public String getNavn() {
         return navn;
@@ -38,38 +42,13 @@ public class DataRegistrering {
         this.efternavn = efternavn;
     }
 
-    public Long getStelNummer() {
-        return stelNummer;
-    }
-
-    public void setStelNummer(Long stelNummer) {
-        this.stelNummer = stelNummer;
-    }
-
     public String getBilModel() {
         return bilModel;
     }
 
-    public void setBilModel(int bilModel) {
-        this.bilModel = String.valueOf(bilModel);
+    public void setBilModel(String bilModel) {
+        this.bilModel = bilModel;
     }
-
-    public Date getLejeStartDato() {
-        return LejeStartDato;
-    }
-
-    public void setLejeStartDato(Date lejeStartDato) {
-        LejeStartDato = lejeStartDato;
-    }
-
-    public Date getLejeSlugDato() {
-        return LejeSlugDato;
-    }
-
-    public void setLejeSlugDato(Date lejeSlugDato) {
-        LejeSlugDato = lejeSlugDato;
-    }
-
 
     public String getBilMærke() {
         return bilMærke;
@@ -78,5 +57,34 @@ public class DataRegistrering {
     public void setBilMærke(String bilMærke) {
         this.bilMærke = bilMærke;
     }
-}
 
+    public Date getLejeStartDato() {
+        return lejeStartDato;
+    }
+
+    public void setLejeStartDato(Date lejeStartDato) {
+        this.lejeStartDato = lejeStartDato;
+    }
+
+    public Date getLejeSlutDato() {
+        return lejeSlutDato;
+    }
+
+    public void setLejeSlutDato(Date lejeSlutDato) {
+        this.lejeSlutDato = lejeSlutDato;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Long stelNummer;
+    private String navn;
+    private String efternavn;
+    private String bilModel; // Ændret fra bil_model til bilModel
+    private String bilMærke;
+    private Date lejeStartDato;
+    private Date lejeSlutDato;
+
+    // Constructor, getters og setters
+}

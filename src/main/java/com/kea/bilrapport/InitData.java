@@ -26,13 +26,13 @@ public class InitData implements CommandLineRunner {
     public void run(String... args) throws Exception {
         // Opret dummy data for leasing
         DataRegistrering leasingData = new DataRegistrering();
-        leasingData.setStelNummer(123L);
+        leasingData.setStelNummer(Long.valueOf(123L));
         leasingData.setNavn("Justin");
         leasingData.setEfternavn("Bieber");
-        leasingData.setBilModel(2022);
+        leasingData.setBilModel(String.valueOf(2022));
         leasingData.setBilMærke("Toyota");
         leasingData.setLejeStartDato(new Date());
-        leasingData.setLejeSlugDato(new Date(System.currentTimeMillis() + 864000000L)); // 10 dage frem
+        leasingData.setLejeSlutDato(new Date(System.currentTimeMillis() + 864000000L)); // 10 dage frem
 
         dataRegistreringRepository.save(leasingData);
 

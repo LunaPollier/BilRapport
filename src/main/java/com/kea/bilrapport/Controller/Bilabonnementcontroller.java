@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
+/*
 
 @Controller
 public class Bilabonnementcontroller {
@@ -40,11 +42,12 @@ public class Bilabonnementcontroller {
                                    @RequestParam("stelnummer") String stelnummer,
                                    @RequestParam("bilmodel") String bilmodel,
                                    @RequestParam("bilmærke") String bilmærke,
-                                   @RequestParam("startLejeperiode") String startLejeperiode,
-                                   @RequestParam("slutLejeperiode") String slutLejeperiode)
+                                   @RequestParam("startLejeperiode") Date startLejeperiode,
+                                   @RequestParam("pris") double pris,
+                                   @RequestParam("slutLejeperiode") Date slutLejeperiode)
     {
 
-        nylejeaftale lejeaftale = new nylejeaftale(fornavn, efternavn, stelnummer, bilmodel, bilmærke, startLejeperiode, slutLejeperiode);
+        nylejeaftale lejeaftale = new nylejeaftale(fornavn, efternavn, stelnummer, bilmodel, bilmærke, startLejeperiode, slutLejeperiode, pris);
         lejeaftale.setId(Integer.parseInt("id")); // Husk at sætte ID for opdateringen
         bilabonnementRepository.update(lejeaftale);
         // Tilbage til oversigten
@@ -59,3 +62,4 @@ public class Bilabonnementcontroller {
         return "redirect:/Lejeaftale";
     }
 }
+*/

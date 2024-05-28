@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Component
@@ -31,8 +32,8 @@ public class InitData implements CommandLineRunner {
         leasingData.setEfternavn("Bieber");
         leasingData.setBilModel(String.valueOf(2022));
         leasingData.setBilMærke("Toyota");
-        leasingData.setLejeStartDato(new Date());
-        leasingData.setLejeSlutDato(new Date(System.currentTimeMillis() + 864000000L)); // 10 dage frem
+        leasingData.setLejeStartDato(LocalDate.now());
+        leasingData.setLejeSlutDato(LocalDate.now().plusDays(10)); // 10 dage frem
 
         dataRegistreringRepository.save(leasingData);
 

@@ -1,14 +1,24 @@
 package com.kea.bilrapport.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
 public class DataRegistrering {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    private long id;
+    private String navn;
+    private Long stelNummer;
+    private String efternavn;
+    private String bilModel;
+    private String bilMærke;
+    private LocalDate lejeStartDato;
+    private LocalDate lejeSlutDato;
+    private double pris;
 
     public Long getId() {
         return id;
@@ -58,33 +68,26 @@ public class DataRegistrering {
         this.bilMærke = bilMærke;
     }
 
-    public Date getLejeStartDato() {
+    public LocalDate getLejeStartDato() {
         return lejeStartDato;
     }
 
-    public void setLejeStartDato(Date lejeStartDato) {
+    public void setLejeStartDato(LocalDate lejeStartDato) {
         this.lejeStartDato = lejeStartDato;
     }
 
-    public Date getLejeSlutDato() {
+    public LocalDate getLejeSlutDato() {
         return lejeSlutDato;
     }
 
-    public void setLejeSlutDato(Date lejeSlutDato) {
+    public void setLejeSlutDato(LocalDate lejeSlutDato) {
         this.lejeSlutDato = lejeSlutDato;
     }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private Long stelNummer;
-    private String navn;
-    private String efternavn;
-    private String bilModel; // Ændret fra bil_model til bilModel
-    private String bilMærke;
-    private Date lejeStartDato;
-    private Date lejeSlutDato;
-
-    // Constructor, getters og setters
+    public double getPris(){
+        return pris;
+    }
+    public void setPris(double pris){
+        this.pris = pris;
+    }
 }
+

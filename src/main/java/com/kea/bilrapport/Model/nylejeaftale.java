@@ -1,5 +1,9 @@
 package com.kea.bilrapport.Model;
 
+import java.util.Date;
+
+
+
 public class nylejeaftale {
 
     private int id;
@@ -8,12 +12,12 @@ public class nylejeaftale {
     private String stelnummer;
     private String bilmodel;
     private String bilmærke;
-    private String startLejeperiode;
-    private String slutLejeperiode;
+    private Date startLejeperiode;
+    private Date slutLejeperiode;
 
 
     // konstruktør
-    public nylejeaftale(String fornavn, String efternavn, String stelnummer, String bilmodel, String bilmærke, String startLejeperiode, String slutLejeperiode) {
+    public nylejeaftale(String fornavn, String efternavn, String stelnummer, String bilmodel, String bilmærke, Date startLejeperiode, Date slutLejeperiode) {
         this.fornavn = fornavn;
         this.efternavn = efternavn;
         this.stelnummer = stelnummer;
@@ -72,19 +76,19 @@ public class nylejeaftale {
         this.bilmærke = bilmærke;
     }
 
-    public String getStartLejeperiode() {
+    public Date getStartLejeperiode() {
         return startLejeperiode;
     }
 
-    public void setStartLejeperiode(String startLejeperiode) {
+    public void setStartLejeperiode(Date startLejeperiode) {
         this.startLejeperiode = startLejeperiode;
     }
 
-    public String getSlutLejeperiode() {
+    public Date getSlutLejeperiode() {
         return slutLejeperiode;
     }
 
-    public void setSlutLejeperiode(String slutLejeperiode) {
+    public void setSlutLejeperiode(Date slutLejeperiode) {
         this.slutLejeperiode = slutLejeperiode;
     }
 
@@ -102,3 +106,4 @@ public class nylejeaftale {
                 '}';
     }
 }
+

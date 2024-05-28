@@ -52,4 +52,14 @@ public class Skade {
     public void setPris(Double pris) {
         this.pris = pris;
     }
+
+    public long getId() {
+        return 0;
+
+    }
+
+    public void setId(long id) {
+
+    }
 }
+

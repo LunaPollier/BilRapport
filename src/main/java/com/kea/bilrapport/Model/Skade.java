@@ -6,6 +6,8 @@ import jakarta.persistence.Id;
 
 
 public class Skade {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long skadeId;
     private String stelnummer;
     private Long bilId;
@@ -54,12 +56,12 @@ public class Skade {
     }
 
     public long getId() {
-        return 0;
+        return skadeId;
 
     }
 
     public void setId(long id) {
-
+    this.skadeId = id;
     }
 }
 

@@ -35,11 +35,16 @@ public class SkadeController {
         return "redirect:/skader";
     }
 
+
     @GetMapping("/edit/{id}")
     public String showEditForm(@PathVariable("id") Long id, Model model) {
         Skade skade = skadeRepository.findById(id);
+        if (skade == null) {
+            // Håndter tilfælde hvor skaden ikke findes
+            return "redirect:/skader";
+        }
         model.addAttribute("skade", skade);
-        return "editSkade";  // Opret en Thymeleaf-skabelon ved navn editSkade.html
+        return "editSkade";  // Sørg for, at denne skabelon eksisterer
     }
 
     @PostMapping("/update/{id}")

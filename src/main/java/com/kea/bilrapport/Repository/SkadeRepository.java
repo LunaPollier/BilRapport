@@ -1,6 +1,7 @@
 package com.kea.bilrapport.Repository;
 import com.kea.bilrapport.Model.Skade;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -25,9 +26,14 @@ public class SkadeRepository {
         return jdbcTemplate.query(sql, new SkadeRowMapper());
     }
 
+
     public Skade findById(Long id) {
         String sql = "SELECT * FROM skade WHERE id = ?";
-        return jdbcTemplate.queryForObject(sql, new SkadeRowMapper(), id);
+        try {
+            return jdbcTemplate.queryForObject(sql, new SkadeRowMapper(), id);
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
     }
 
     public void save(Skade skade) {

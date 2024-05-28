@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:https="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width. initial-scale=1.0">
@@ -11,37 +11,33 @@
 
          <nav>
              <div class="container">
+
+
                  <ul>
                      <li><a href="http://localhost:63342/BilRapport/src/main/resources/templates/dataregistrering.html?_ijt=c7lndm1avlfoul2ln30q995tmm">Dataregistrering</a></li>
                      <li><a href="http://localhost:63342/BilRapport/src/main/resources/templates/skade.html?_ijt=jbd5vtpkqtr7n65lob5d49fuqm">Skade og udbedring</a></li>
-                     <li><a href="http://localhost:63342/BilRapport/src/main/resources/templates/opret.html?_ijt=4s0r10bhs1p02ocn4ku8tpd064">Opret </a> </li>
-                     <li><a href="http://localhost:63342/BilRapport/src/main/resources/templates/login.html?_ijt=4s0r10bhs1p02ocn4ku8tpd064">Login</a></li>
-
                  </ul>
              </div>
     </nav>
 
-         <div id="dashboard">
-             <div class ="container">
-                 <h1>Lejeaftaler </h1>
+         <div id="forside-dashboard" style="background-image: url('https://i.pinimg.com/originals/ba/f3/50/baf3500508323fd4a3faeb54f839bcd5.png'); background-size: cover; background-position: 100px; padding: 100px;">
+
+
+             </div>
+
+         <h1>Rapportering og overvågning </h1>
+         <div class ="dashboard-container">
+
+
+                 <div class="container-background">
+
 
                  <div class="summary">
                      <p>Antal aktive lejeaftaler: <strong th:text= "${antalAktiveLejeaftaler}">Loading...</strong></p>
                      <p>Samlet pris for nuværende lejede biler: <strong>XXX DKK</strong></p>
                  </div>
-
-                 <div class="chart">
-
-                     <p> Grafisk præsentation af data her</p>
-                 </div>
              </div>
          </div>
-
-    <div id="status">
-        <div class="container">
-            <p>Aktuel status: Ingen nye opdateringer.</p>
-        </div>
-    </div>
          <footer>
              <section class="footer">
                  <p><strong> Bilabonnement A/S </strong></p>

@@ -1,8 +1,9 @@
-/*Styling for layout*/
+
 body{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color: black;
 }
 body nav image{
     width: 100vw;
@@ -32,37 +33,114 @@ h1{
     margin-bottom: 40px;
 }
 /*Styling for navigation*/
-nav{
-    background-color:navy;
-    color: #ffffff;
+/* Styling for navigation */
+nav {
+    background-color: #000000;
+    color: white;
     padding: 10px 0;
 }
-nav ul{
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     text-align: center;
 }
-nav ul li{
+nav ul li {
     display: inline;
     margin-right: 20px;
 }
 nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
-/*Styling for status area*/
-#status{
-    background-color: #ddd;
+
+/* Styling for status area */
+#status {
+    background-color: #000000;
     padding: 20px;
     text-align: center;
 }
+
+/* Styling for footer */
 footer {
     bottom: 0;
     width: 100%;
-    background-color: navy;
+    background-color: #000000;
     color: white;
     text-align: center;
     position: fixed;
-    left: 0;
+
 }
+
+/* Styling for layout */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: black;
+}
+
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
+    color: #211f1f;
+    text-align: center;
+}
+
+
+
+/* Styling for dashboard background */
+#forside-dashboard {
+    background-image: url('https://sjaellandsbiler.dk/wp-content/uploads/2019/12/b5-1024x284.png');
+    background-size: cover;
+    background-position: center;
+    padding: 100px;
+    opacity: 0.9;
+    position: relative;
+}
+
+/* Styling for h1 inside the dashboard */
+
+
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .navbar li {
+        margin-right: 10px;
+    }
+
+    input[type="text"], input[type="email"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .dashboard-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: rgba(178, 234, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .summary p {
+        margin: 0;
+        color: black;
+    }
+
+    .chart {
+        text-align: center;
+    }
+}
+.footer p{
+    color: white;
+}
+

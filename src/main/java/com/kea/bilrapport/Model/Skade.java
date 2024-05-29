@@ -55,13 +55,6 @@ public class Skade {
         this.pris = pris;
     }
 
-    public long getId() {
-        return skadeId;
 
-    }
-
-    public void setId(long id) {
-    this.skadeId = id;
-    }
 }
 

@@ -3,6 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!DOCTYPE html>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Kundeoversigt</title>
+    </head>
+    <body>
+
+    <h1>Kundeoversigt</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Navn</th>
+            <th>Efternavn</th>
+            <th>Stelnummer</th>
+            <th>Bil Model</th>
+            <th>Bil Mærke</th>
+            <th>Leje Start Dato</th>
+            <th>Leje Slut Dato</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="dataRegistrering : ${dataRegistreringList}">
+            <td th:text="${dataRegistrering.navn}">Navn</td>
+            <td th:text="${dataRegistrering.efternavn}">Efternavn</td>
+            <td th:text="${dataRegistrering.stelNummer}">Stelnummer</td>
+            <td th:text="${dataRegistrering.bilModel}">Bil Model</td>
+            <td th:text="${dataRegistrering.bilMærke}">Bil Mærke</td>
+            <td th:text="${dataRegistrering.lejeStartDato}">Leje Start Dato</td>
+            <td th:text="${dataRegistrering.lejeSlutDato}">Leje Slut Dato</td>
+        </tr>
+        </tbody>
+    </table>
+
+    </body>
+    </html>
+
 </head>
 <body>
 

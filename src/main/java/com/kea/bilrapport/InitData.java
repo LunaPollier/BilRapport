@@ -32,6 +32,7 @@ public class InitData implements CommandLineRunner {
         leasingData.setEfternavn("Bieber");
         leasingData.setBilModel(String.valueOf(2022));
         leasingData.setBilMærke("Toyota");
+        leasingData.setPrice(2000L);
         leasingData.setLejeStartDato(LocalDate.now());
         leasingData.setLejeSlutDato(LocalDate.now().plusDays(10)); // 10 dage frem
 

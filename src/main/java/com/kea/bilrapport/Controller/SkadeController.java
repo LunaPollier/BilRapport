@@ -29,9 +29,11 @@ public class SkadeController {
         return "createSkade";  // Opret en Thymeleaf-skabelon ved navn createSkade.html
     }
 
+
     @PostMapping("/create")
     public String createSkade(@ModelAttribute Skade skade) {
         skadeRepository.save(skade);
+        System.out.println("Received POST request to create skade: " + skade);
         return "redirect:/skader";
     }
 
@@ -59,4 +61,5 @@ public class SkadeController {
         skadeRepository.deleteById(id);
         return "redirect:/skader";
     }
+
 }

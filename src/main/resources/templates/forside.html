@@ -1,46 +1,42 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medarbejder Dashboard</title>
-    <link rel="stylesheet" href="../static/css/forside.css" th:href="@{css/forside.css}">
+    <link rel="stylesheet" href="../static/css/kundeOversigt.css" th:href="@{css/forside.css}">
 </head>
 <body>
 <nav>
     <div class="container">
         <ul>
-            <li><a th:href="@{/forside}">Forside</a></li>
-            <li><a th:href="@{/dataregistrering}">Dataregistrering</a></li>
-            <li><a th:href="@{/skade}">Skade og udbedring</a></li>
+            <li><a href="/dataregistreringer">Dataregistrering</a></li>
+            <li><a href="/skade">Skade og udbedring</a></li>
+            <li><a href="dataregistrering/kundeOversigt">Kunde Oversigt</a></li>
+
 
         </ul>
     </div>
 </nav>
 
-<div id="dashboard">
-    <div class="container">
-        <h1>Lejeaftaler</h1>
-        <div class="summary">
-            <p>Antal dataregistreringer: <strong th:text="${antalDataRegistreringer}">Loading...</strong></p>
-            <p>Samlet pris for nuværende lejede biler: <strong>XXX DKK</strong></p>
-        </div>
-        <div class="chart">
-            <p>Grafisk præsentation af data her</p>
-        </div>
-    </div>
+<div id="forside-dashboard" style="background-image: url('https://i.pinimg.com/originals/ba/f3/50/baf3500508323fd4a3faeb54f839bcd5.png'); background-size: cover; background-position: 100px; padding: 100px;">
 </div>
 
-<div id="status">
-    <div class="container">
-        <p>Aktuel status: Ingen nye opdateringer.</p>
+<h1>Rapportering og overvågning</h1>
+<div class ="dashboard-container">
+    <div class="container-background">
+        <div class="summary">
+            <p>Antal aktive lejeaftaler: <strong th:text="${antalAktiveLejeaftaler}">Loading...</strong></p>
+            <p>Samlet pris for nuværende lejede biler: <strong th:text="${totalPris}">XXX DKK</strong></p>
+        </div>
+
     </div>
 </div>
 
 <footer>
     <section class="footer">
-        <p><strong>Bilabonnement A/S</strong></p>
-        <p>Vibeholmsvej 31 2605 Brøndby CVR-nr. 37856827</p>
+        <p><strong> Bilabonnement A/S </strong></p>
+        <p> Vibeholmsvej 31 2605 Brøndby CVR-nr. 37856827</p>
     </section>
 </footer>
 </body>

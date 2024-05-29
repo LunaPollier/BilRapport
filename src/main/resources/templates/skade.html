@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Registrering af skade</title>
-    <link rel="stylesheet" href="../static/css/skade.css" th:href="@{css/skade.css}">
+    <!-- Ændret stien til CSS-filen -->
+    <link rel="stylesheet" href="../static/css/skade.css" th:href="@{/css/skade.css}">
 </head>
 <body>
 <section class="header">
     <div class="logo">
-        <a th:href="@{https://bilabonnement.dk/}" class="logo">
-            <img src="../static/img/bil.png" th:src="@{img/bil.png}" width="30%" height="30%" alt="logo1">
+        <!-- Ændret stien til billedfilen -->
+        <a href="https://bilabonnement.dk/" class="logo">
+            <img src="../static/img/bil.png" th:src="@{/img/bil.png}" width="30%" height="30%" alt="logo1">
         </a>
     </div>
 </section>
 <div class="form-container">
-    <a href="forside.html" class="back-to-home">Gå tilbage til forside</a>
-    <div class="form-container" th:object="${user}">
+    <!-- Ændret stien til linket til startsiden -->
+    <a href="/forside" class="back-to-home">Gå tilbage til forside</a>
+    <div class="form-container">
         <h2>Registrer Skade</h2>
+        <!-- Fjernet th:object="${user}", hvis ikke relevant -->
         <form id="skade-form">
             <label for="stelnummer">Stelnummer:</label><br>
             <input type="text" id="stelnummer" name="stelnummer" required><br>
@@ -41,8 +45,10 @@
             beskrivelse: document.getElementById('beskrivelse').value,
             pris: parseFloat(document.getElementById('pris').value)
         };
+        console.log('Form Data:', formData);
 
-        fetch('http://localhost:8080/skade/opret-skade', {
+        // Ændret URL'en til backend-endpointet for at oprette en skade
+        fetch('/skader/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -59,6 +65,8 @@
             .catch(error => {
                 console.error('Der opstod en fejl:', error);
                 alert('Der opstod en fejl: ' + error.message);
+
+
             });
     });
 </script>

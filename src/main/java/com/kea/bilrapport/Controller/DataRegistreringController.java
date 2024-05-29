@@ -54,4 +54,10 @@ public class DataRegistreringController {
         dataRegistreringRepository.deleteById(stelNummer);
         return "redirect:/dataregistrering";
     }
+    @GetMapping("/kundeOversigt")
+    public String visKundeOversigt(Model model) {
+        List<DataRegistrering> dataRegistreringList = dataRegistreringRepository.findAll();
+        model.addAttribute("dataRegistreringList", dataRegistreringList);
+        return "kundeOversigt";
+    }
 }

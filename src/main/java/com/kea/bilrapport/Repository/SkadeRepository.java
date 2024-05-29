@@ -43,7 +43,7 @@ public class SkadeRepository {
 
     public void update(Skade skade) {
         String sql = "UPDATE skade SET stelnummer = ?, bil_id = ?, beskrivelse = ?, pris = ? WHERE id = ?";
-        jdbcTemplate.update(sql, skade.getStelnummer(), skade.getBilId(), skade.getBeskrivelse(), skade.getPris(), skade.getId());
+        jdbcTemplate.update(sql, skade.getStelnummer(), skade.getBilId(), skade.getBeskrivelse(), skade.getPris(), skade.getSkadeId());
     }
 
     public void deleteById(Long id) {
@@ -51,16 +51,20 @@ public class SkadeRepository {
         jdbcTemplate.update(sql, id);
     }
 
-    private static class SkadeRowMapper implements RowMapper<Skade> {
-        @Override
-        public Skade mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Skade skade = new Skade();
-            skade.setId(rs.getLong("id"));
-            skade.setStelnummer(rs.getString("stelnummer"));
-            skade.setBilId(rs.getLong("bil_id"));
-            skade.setBeskrivelse(rs.getString("beskrivelse"));
-            skade.setPris(rs.getDouble("pris"));
-            return skade;
+
+        private static class SkadeRowMapper implements RowMapper<Skade> {
+            @Override
+            public Skade mapRow(ResultSet rs, int rowNum) throws SQLException {
+                Skade skade = new Skade();
+                skade.setSkadeId(rs.getLong("skadeId")); // Korrekt måde at indstille skadeId
+                skade.setStelnummer(rs.getString("stelnummer"));
+                skade.setBilId(rs.getLong("bil_id"));
+                skade.setBeskrivelse(rs.getString("beskrivelse"));
+                skade.setPris(rs.getDouble("pris"));
+                return skade;
+            }
         }
+
+
     }
-}
+

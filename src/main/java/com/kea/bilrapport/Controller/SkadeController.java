@@ -6,12 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
 
 import java.util.List;
 
 @Controller
 @RequestMapping("/skader")
-@CrossOrigin(origins = "http://localhost:8080")
 public class SkadeController {
 
     @Autowired
@@ -21,31 +22,30 @@ public class SkadeController {
     public String showSkader(Model model) {
         List<Skade> skader = skadeRepository.findAll();
         model.addAttribute("skader", skader);
-        return "skadeListe"; // Opret en Thymeleaf-skabelon ved navn skadeListe.html
+        return "skadeListe";
     }
 
     @GetMapping("/create")
     public String showCreateForm(Model model) {
         model.addAttribute("skade", new Skade());
-        return "createSkade";  // Opret en Thymeleaf-skabelon ved navn createSkade.html
+        return "createSkade";
     }
 
     @PostMapping("/create")
-    public Skade createSkade(@ModelAttribute Skade skade) {
+    @ResponseBody
+    public String createSkade(@RequestBody Skade skade) {
         skadeRepository.save(skade);
-       return skade;
+        return "Skade registreret succesfuldt!";
     }
-
 
     @GetMapping("/edit/{id}")
     public String showEditForm(@PathVariable("id") Long id, Model model) {
         Skade skade = skadeRepository.findById(id);
         if (skade == null) {
-            // Håndter tilfælde hvor skaden ikke findes
             return "redirect:/skader";
         }
         model.addAttribute("skade", skade);
-        return "editSkade";  // Sørg for, at denne skabelon eksisterer
+        return "editSkade";
     }
 
     @PostMapping("/update/{id}")
@@ -60,5 +60,4 @@ public class SkadeController {
         skadeRepository.deleteById(id);
         return "redirect:/skader";
     }
-
 }

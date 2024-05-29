@@ -3,9 +3,13 @@ package com.kea.bilrapport.Model;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
-
+@Entity
+@Table(name = "skade")
 public class Skade {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long skadeId;
     private String stelnummer;
     private Long bilId;
@@ -52,4 +56,13 @@ public class Skade {
     public void setPris(Double pris) {
         this.pris = pris;
     }
+
+    public long getId() {
+        return skadeId;
+    }
+
+    public void setId(long id) {
+        this.skadeId = id;
+    }
 }
+

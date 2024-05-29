@@ -48,10 +48,15 @@ public class DataRegistreringController {
         return "redirect:/dataregistrering";
     }
 
-
     @DeleteMapping("/{stelNummer}")
     public String sletDataRegistrering(@PathVariable String stelNummer) {
         dataRegistreringRepository.deleteById(stelNummer);
         return "redirect:/dataregistrering";
+    }
+    @GetMapping("/kundeOversigt")
+    public String visKundeOversigt(Model model) {
+        List<DataRegistrering> dataRegistreringList = dataRegistreringRepository.findAll();
+        model.addAttribute("dataRegistreringList", dataRegistreringList);
+        return "kundeOversigt";
     }
 }

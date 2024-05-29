@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Registrering af skade</title>
-    <link rel="stylesheet" href="../static/css/skade.css" th:href="@{css/skade.css}">
+    <link rel="stylesheet" href="../static/css/skade.css" th:href="@{/css/skade.css}">
 </head>
 <body>
 <section class="header">
     <div class="logo">
-        <a th:href="@{https://bilabonnement.dk/}" class="logo">
-            <img src="../static/img/bil.png" th:src="@{img/bil.png}" width="30%" height="30%" alt="logo1">
+        <a href="https://bilabonnement.dk/" class="logo">
+            <img src="../static/img/bil.png" th:src="@{/img/bil.png}" width="30%" height="30%" alt="logo1">
         </a>
     </div>
 </section>
 <div class="form-container">
-    <a href="forside.html" class="back-to-home">Gå tilbage til forside</a>
-    <div class="form-container" th:object="${user}">
+    <a href="/forside" class="back-to-home">Gå tilbage til forside</a>
+    <div class="form-container">
         <h2>Registrer Skade</h2>
         <form id="skade-form">
             <label for="stelnummer">Stelnummer:</label><br>
@@ -33,27 +33,29 @@
 
 <script>
     document.getElementById('skade-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Forhindre standard form indsendelse
+        event.preventDefault();
 
         const formData = {
-            stelNummer: document.getElementById('stelnummer').value,
+            stelnummer: document.getElementById('stelnummer').value,
             bilId: document.getElementById('bilId').value,
             beskrivelse: document.getElementById('beskrivelse').value,
             pris: parseFloat(document.getElementById('pris').value)
         };
+        console.log('Form Data:', formData);
 
-        fetch('http://localhost:8080/skade/opret-skade', {
+        fetch('/skader/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(formData)
         })
-            .then(response => {
-                if (response.ok) {
+            .then(response => response.text())
+            .then(data => {
+                if (data === 'Skade registreret succesfuldt!') {
                     alert('Skade registreret succesfuldt!');
                 } else {
-                    return response.text().then(text => { throw new Error(text); });
+                    alert('Fejl ved registrering: ' + data);
                 }
             })
             .catch(error => {
@@ -64,3 +66,4 @@
 </script>
 </body>
 </html>
+

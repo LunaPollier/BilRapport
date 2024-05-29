@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
 
 import java.util.List;
 
@@ -20,26 +22,30 @@ public class SkadeController {
     public String showSkader(Model model) {
         List<Skade> skader = skadeRepository.findAll();
         model.addAttribute("skader", skader);
-        return "skadeListe";  // Opret en Thymeleaf-skabelon ved navn skadeListe.html
+        return "skadeListe";
     }
 
     @GetMapping("/create")
     public String showCreateForm(Model model) {
         model.addAttribute("skade", new Skade());
-        return "createSkade";  // Opret en Thymeleaf-skabelon ved navn createSkade.html
+        return "createSkade";
     }
 
     @PostMapping("/create")
-    public String createSkade(@ModelAttribute Skade skade) {
+    @ResponseBody
+    public String createSkade(@RequestBody Skade skade) {
         skadeRepository.save(skade);
-        return "redirect:/skader";
+        return "Skade registreret succesfuldt!";
     }
 
     @GetMapping("/edit/{id}")
     public String showEditForm(@PathVariable("id") Long id, Model model) {
         Skade skade = skadeRepository.findById(id);
+        if (skade == null) {
+            return "redirect:/skader";
+        }
         model.addAttribute("skade", skade);
-        return "editSkade";  // Opret en Thymeleaf-skabelon ved navn editSkade.html
+        return "editSkade";
     }
 
     @PostMapping("/update/{id}")

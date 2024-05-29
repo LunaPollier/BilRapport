@@ -32,12 +32,13 @@ public class InitData implements CommandLineRunner {
         leasingData.setEfternavn("Bieber");
         leasingData.setBilModel(String.valueOf(2022));
         leasingData.setBilMærke("Toyota");
+        leasingData.setPrice(2000L);
         leasingData.setLejeStartDato(LocalDate.now());
         leasingData.setLejeSlutDato(LocalDate.now().plusDays(10)); // 10 dage frem
 
         dataRegistreringRepository.save(leasingData);
 
-        // Opret dummy data for skade
+        // Opretter dummy data for skade
         Skade skadeData = new Skade();
         skadeData.setSkadeId(1L);
         skadeData.setBilId(leasingData.getStelNummer());
@@ -46,7 +47,7 @@ public class InitData implements CommandLineRunner {
 
         skadeRepository.save(skadeData);
 
-        // Lav et link til http://localhost:8080/forside
+
         System.out.println("Link til forsiden: http://localhost:8080/forside");
     }
 }

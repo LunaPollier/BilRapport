@@ -18,7 +18,7 @@ public class DataRegistrering {
     private String bilMærke;
     private LocalDate lejeStartDato;
     private LocalDate lejeSlutDato;
-    private double pris;
+    private Long price;
 
     public Long getId() {
         return id;
@@ -83,11 +83,13 @@ public class DataRegistrering {
     public void setLejeSlutDato(LocalDate lejeSlutDato) {
         this.lejeSlutDato = lejeSlutDato;
     }
-    public double getPris(){
-        return pris;
+
+
+    public Long getPrice() {
+        return price;
     }
-    public void setPris(double pris){
-        this.pris = pris;
+    public void setPrice(Long price){
+        this.price = price;
     }
 }
 

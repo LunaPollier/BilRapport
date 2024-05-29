@@ -53,18 +53,19 @@ public class SkadeRepository {
 
 
         private static class SkadeRowMapper implements RowMapper<Skade> {
-            @Override
-            public Skade mapRow(ResultSet rs, int rowNum) throws SQLException {
-                Skade skade = new Skade();
-                skade.setSkadeId(rs.getLong("skadeId")); // Korrekt måde at indstille skadeId
-                skade.setStelnummer(rs.getString("stelnummer"));
-                skade.setBilId(rs.getLong("bil_id"));
-                skade.setBeskrivelse(rs.getString("beskrivelse"));
-                skade.setPris(rs.getDouble("pris"));
-                return skade;
-            }
+        @Override
+        public Skade mapRow(ResultSet rs, int rowNum) throws SQLException {
+            Skade skade = new Skade();
+            skade.setSkadeId(rs.getLong("id")); // Brug det korrekte navn for kolonnen
+            skade.setStelnummer(rs.getString("stelnummer"));
+            skade.setBilId(rs.getLong("bil_id"));
+            skade.setBeskrivelse(rs.getString("beskrivelse"));
+            skade.setPris(rs.getDouble("pris"));
+            return skade;
         }
-
-
     }
+
+
+
+}
 

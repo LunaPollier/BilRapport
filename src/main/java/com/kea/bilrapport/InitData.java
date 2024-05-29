@@ -47,7 +47,7 @@ public class InitData implements CommandLineRunner {
 
         skadeRepository.save(skadeData);
 
-        // Lav et link til http://localhost:8080/forside
+
         System.out.println("Link til forsiden: http://localhost:8080/forside");
     }
 }

@@ -11,6 +11,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/skader")
+@CrossOrigin(origins = "http://localhost:8080")
 public class SkadeController {
 
     @Autowired
@@ -20,7 +21,7 @@ public class SkadeController {
     public String showSkader(Model model) {
         List<Skade> skader = skadeRepository.findAll();
         model.addAttribute("skader", skader);
-        return "skadeListe";  // Opret en Thymeleaf-skabelon ved navn skadeListe.html
+        return "skadeListe"; // Opret en Thymeleaf-skabelon ved navn skadeListe.html
     }
 
     @GetMapping("/create")
@@ -29,12 +30,10 @@ public class SkadeController {
         return "createSkade";  // Opret en Thymeleaf-skabelon ved navn createSkade.html
     }
 
-
     @PostMapping("/create")
-    public String createSkade(@ModelAttribute Skade skade) {
+    public Skade createSkade(@ModelAttribute Skade skade) {
         skadeRepository.save(skade);
-        System.out.println("Received POST request to create skade: " + skade);
-        return "redirect:/skader";
+       return skade;
     }
 
 

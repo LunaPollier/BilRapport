@@ -48,7 +48,6 @@ public class DataRegistreringController {
         return "redirect:/dataregistrering";
     }
 
-
     @DeleteMapping("/{stelNummer}")
     public String sletDataRegistrering(@PathVariable String stelNummer) {
         dataRegistreringRepository.deleteById(stelNummer);

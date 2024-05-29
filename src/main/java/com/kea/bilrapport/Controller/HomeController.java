@@ -39,19 +39,19 @@ public class HomeController {
 
         @GetMapping("/forside")
         public String visForside(Model model) {
-            // Fetch data from repository
+            // Fetcher data fra repository
             List<DataRegistrering> dataRegistreringList = dataRegistreringRepository.findAll();
 
-            // Calculate number of active leases
+            // Beregner aktive lejede biler
             int antalAktiveLejeaftaler = dataRegistreringList.size();
 
-            // Calculate total price for all active leases
+            // Beregner den samlede pris for antal lejede biler
             double totalPris = dataRegistreringList.stream()
                     .filter(data -> data.getPrice() != null) // Tjek at getPrice ikke returnerer null
                     .mapToDouble(DataRegistrering::getPrice)
                     .sum();
 
-            // Add attributes to model
+            // Tilføjer atributter til model
             model.addAttribute("antalAktiveLejeaftaler", antalAktiveLejeaftaler);
             model.addAttribute("totalPris", totalPris);
 

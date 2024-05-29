@@ -38,7 +38,7 @@ public class InitData implements CommandLineRunner {
 
         dataRegistreringRepository.save(leasingData);
 
-        // Opret dummy data for skade
+        // Opretter dummy data for skade
         Skade skadeData = new Skade();
         skadeData.setSkadeId(1L);
         skadeData.setBilId(leasingData.getStelNummer());
